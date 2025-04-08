@@ -1,4 +1,4 @@
-import { css } from '../../styled-system/css';
+import { css } from '../../styled-system/css'
 
 const navbarStyles = css({
   display: 'flex',
@@ -10,7 +10,7 @@ const navbarStyles = css({
   position: 'sticky',
   top: 0,
   zIndex: 10,
-});
+})
 
 const navLinks = css({
   display: 'flex',
@@ -18,7 +18,7 @@ const navLinks = css({
   listStyle: 'none',
   margin: 0,
   padding: 0,
-});
+})
 
 const navLink = css({
   color: 'white',
@@ -26,14 +26,12 @@ const navLink = css({
   '&:hover': {
     color: 'slate.300',
   },
-});
+})
 
 export function Navbar() {
   return (
     <nav className={navbarStyles}>
-      <div className={css({ fontSize: '1.5rem', fontWeight: 'bold' })}>
-        My App
-      </div>
+      <div className={css({ fontSize: '1.5rem', fontWeight: 'bold' })}>My App</div>
       <ul className={navLinks}>
         <li>
           <a href="/" className={navLink}>
@@ -52,5 +50,5 @@ export function Navbar() {
         </li>
       </ul>
     </nav>
-  );
-} 
+  )
+}
