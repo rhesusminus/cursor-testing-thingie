@@ -65,8 +65,11 @@ The project includes three TypeScript configuration files:
 
 ## Code Quality
 
-- ESLint is configured with TypeScript-aware rules
-- Biome is used for consistent code formatting
+- Biome is used for:
+  - Fast and efficient linting with TypeScript support
+  - Consistent code formatting
+  - Import organization
+  - Modern JavaScript/TypeScript best practices
 - PandaCSS provides type-safe CSS-in-JS solutions
 
 ## Contributing
