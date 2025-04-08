@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { css } from '../../styled-system/css'
 
 const navbarStyles = css({
@@ -34,19 +35,19 @@ export function Navbar() {
       <div className={css({ fontSize: '1.5rem', fontWeight: 'bold' })}>My App</div>
       <ul className={navLinks}>
         <li>
-          <a href="/" className={navLink}>
+          <Link to="/" className={navLink}>
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/about" className={navLink}>
+          <Link to="/about" className={navLink}>
             About
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/contact" className={navLink}>
+          <Link to="/contact" className={navLink}>
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
