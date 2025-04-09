@@ -49,6 +49,11 @@ export function Navbar() {
             Contact
           </Link>
         </li>
+        <li>
+          <Link to="/persons" className={navLink}>
+            Persons
+          </Link>
+        </li>
       </ul>
     </nav>
   )

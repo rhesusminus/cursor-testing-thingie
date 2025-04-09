@@ -28,11 +28,17 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "trailingCommas": "es5",
+      "trailingComma": "es5",
       "semicolons": "asNeeded"
     }
   },
   "files": {
-    "ignore": ["*.json", "tsconfig.*", "./styled-system/**", "node_modules", "dist"]
+    "ignore": [
+      "*.json",
+      "tsconfig.*",
+      "./styled-system/**",
+      "node_modules",
+      "dist"
+    ]
   }
 }
