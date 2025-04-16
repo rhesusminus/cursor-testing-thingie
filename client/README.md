@@ -32,7 +32,7 @@ This project is a modern React application bootstrapped with Vite and configured
    ```bash
    npm run dev
    ```
-   This will start the development server at `http://localhost:5173`
+   This will start both the development server at `http://localhost:5173` and the PandaCSS codegen in watch mode
 
 3. Build for production:
    ```bash
@@ -41,8 +41,8 @@ This project is a modern React application bootstrapped with Vite and configured
 
 ## Available Scripts
 
-- `npm run dev` - Start development server with hot module replacement
-- `npm run build` - Build for production
+- `npm run dev` - Start development server and PandaCSS codegen in watch mode
+- `npm run build` - Generate PandaCSS styles, run TypeScript build, and create production build
 - `npm run lint` - Run Biome linter
 - `npm run format` - Format code using Biome
 - `npm run preview` - Preview production build locally
