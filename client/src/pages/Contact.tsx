@@ -1,6 +1,14 @@
 import { useState } from 'react'
-import { css } from '../../styled-system/css'
-import { container, flex } from '../../styled-system/patterns'
+import {
+  contactContainer,
+  heading,
+  form,
+  formGroup,
+  label,
+  input,
+  textarea,
+  submitButton,
+} from './Contact.styles'
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -24,12 +32,12 @@ export function Contact() {
   }
 
   return (
-    <div className={container({ maxW: '600px' })}>
-      <h1 className={css({ fontSize: '2xl', fontWeight: 'bold', mb: '6' })}>Contact Us</h1>
+    <div className={contactContainer}>
+      <h1 className={heading}>Contact Us</h1>
 
-      <form onSubmit={handleSubmit} className={flex({ direction: 'column', gap: '4' })}>
-        <div className={flex({ direction: 'column', gap: '2' })}>
-          <label htmlFor="name" className={css({ fontWeight: 'medium' })}>
+      <form onSubmit={handleSubmit} className={form}>
+        <div className={formGroup}>
+          <label htmlFor="name" className={label}>
             Name
           </label>
           <input
@@ -39,23 +47,12 @@ export function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
-            className={css({
-              p: '2',
-              border: '1px solid',
-              borderColor: 'gray.300',
-              rounded: 'md',
-              '&:focus': {
-                outline: 'none',
-                borderColor: 'blue.500',
-                ring: '1px',
-                ringColor: 'blue.500',
-              },
-            })}
+            className={input}
           />
         </div>
 
-        <div className={flex({ direction: 'column', gap: '2' })}>
-          <label htmlFor="email" className={css({ fontWeight: 'medium' })}>
+        <div className={formGroup}>
+          <label htmlFor="email" className={label}>
             Email
           </label>
           <input
@@ -65,23 +62,12 @@ export function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
-            className={css({
-              p: '2',
-              border: '1px solid',
-              borderColor: 'gray.300',
-              rounded: 'md',
-              '&:focus': {
-                outline: 'none',
-                borderColor: 'blue.500',
-                ring: '1px',
-                ringColor: 'blue.500',
-              },
-            })}
+            className={input}
           />
         </div>
 
-        <div className={flex({ direction: 'column', gap: '2' })}>
-          <label htmlFor="message" className={css({ fontWeight: 'medium' })}>
+        <div className={formGroup}>
+          <label htmlFor="message" className={label}>
             Message
           </label>
           <textarea
@@ -91,42 +77,11 @@ export function Contact() {
             onChange={handleChange}
             required
             rows={4}
-            className={css({
-              p: '2',
-              border: '1px solid',
-              borderColor: 'gray.300',
-              rounded: 'md',
-              resize: 'vertical',
-              '&:focus': {
-                outline: 'none',
-                borderColor: 'blue.500',
-                ring: '1px',
-                ringColor: 'blue.500',
-              },
-            })}
+            className={textarea}
           />
         </div>
 
-        <button
-          type="submit"
-          className={css({
-            mt: '4',
-            p: '2',
-            bg: 'blue.600',
-            color: 'white',
-            rounded: 'md',
-            fontWeight: 'medium',
-            cursor: 'pointer',
-            '&:hover': {
-              bg: 'blue.700',
-            },
-            '&:focus': {
-              outline: 'none',
-              ring: '2px',
-              ringColor: 'blue.500',
-            },
-          })}
-        >
+        <button type="submit" className={submitButton}>
           Send Message
         </button>
       </form>

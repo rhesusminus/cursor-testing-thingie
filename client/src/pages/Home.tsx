@@ -1,8 +1,8 @@
-import { css } from '../../styled-system/css'
+import { homeContainer } from './Home.styles'
 
 export function Home() {
   return (
-    <div className={css({ padding: '2rem' })}>
+    <div className={homeContainer}>
       <h1>Home</h1>
     </div>
   )
