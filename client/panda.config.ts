@@ -1,4 +1,18 @@
-import { defineConfig } from '@pandacss/dev'
+import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
+
+const globalCss = defineGlobalStyles({
+  // Reset styles
+  '*': {
+    margin: 0,
+    padding: 0,
+    boxSizing: 'border-box',
+  },
+  body: {
+    fontFamily:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+    WebkitFontSmoothing: 'antialiased',
+  },
+})
 
 export default defineConfig({
   // Whether to use css reset
@@ -17,4 +31,6 @@ export default defineConfig({
 
   // The output directory for your css system
   outdir: 'styled-system',
+
+  globalCss,
 })

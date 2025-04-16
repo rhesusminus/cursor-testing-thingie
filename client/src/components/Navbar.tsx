@@ -1,58 +1,30 @@
-import { Link } from 'react-router-dom'
-import { css } from '../../styled-system/css'
-
-const navbarStyles = css({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  padding: '1rem 2rem',
-  backgroundColor: 'slate.900',
-  color: 'white',
-  position: 'sticky',
-  top: 0,
-  zIndex: 10,
-})
-
-const navLinks = css({
-  display: 'flex',
-  gap: '2rem',
-  listStyle: 'none',
-  margin: 0,
-  padding: 0,
-})
-
-const navLink = css({
-  color: 'white',
-  textDecoration: 'none',
-  '&:hover': {
-    color: 'slate.300',
-  },
-})
+import { NavLink } from 'react-router-dom'
+import { navbarStyles, navLinks, navLink, activeNavLink, brandText } from './Navbar.styles'
 
 export function Navbar() {
   return (
     <nav className={navbarStyles}>
-      <div className={css({ fontSize: '1.5rem', fontWeight: 'bold' })}>My App</div>
+      <div className={brandText}>My App</div>
       <ul className={navLinks}>
         <li>
-          <Link to="/" className={navLink}>
+          <NavLink to="/" className={({ isActive }) => (isActive ? activeNavLink : navLink)}>
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about" className={navLink}>
+          <NavLink to="/about" className={({ isActive }) => (isActive ? activeNavLink : navLink)}>
             About
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact" className={navLink}>
-            Contact
-          </Link>
-        </li>
-        <li>
-          <Link to="/persons" className={navLink}>
+          <NavLink to="/persons" className={({ isActive }) => (isActive ? activeNavLink : navLink)}>
             Persons
-          </Link>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? activeNavLink : navLink)}>
+            Contact
+          </NavLink>
         </li>
       </ul>
     </nav>
