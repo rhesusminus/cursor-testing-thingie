@@ -22,13 +22,6 @@ export function Persons() {
         {people?.map((person) => (
           <li key={person.url} className={personItem}>
             <h2>{person.name}</h2>
-            <p>Height: {person.height}</p>
-            <p>Mass: {person.mass}</p>
-            <p>Hair Color: {person.hair_color}</p>
-            <p>Skin Color: {person.skin_color}</p>
-            <p>Eye Color: {person.eye_color}</p>
-            <p>Birth Year: {person.birth_year}</p>
-            <p>Gender: {person.gender}</p>
           </li>
         ))}
       </ul>
