@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { getAllPeople } from '../api'
-import { personsStyles, personList, personItem } from './styles/persons.styles'
+import { personsStyles, personList, personItem } from './Persons.styles'
 
 export function Persons() {
   const {
@@ -12,8 +12,13 @@ export function Persons() {
     queryFn: getAllPeople,
   })
 
-  if (isLoading) return <div className={personsStyles}>Loading...</div>
-  if (error) return <div className={personsStyles}>Error: {error.message}</div>
+  if (isLoading) {
+    return <div className={personsStyles}>Loading...</div>
+  }
+
+  if (error) {
+    return <div className={personsStyles}>Error: {error.message}</div>
+  }
 
   return (
     <div className={personsStyles}>

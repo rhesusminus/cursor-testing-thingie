@@ -1,4 +1,4 @@
-import { aboutStyles, headingStyles, sectionStyles } from '../components/About.styles'
+import { aboutStyles, headingStyles, sectionStyles } from './About.styles'
 
 export function About() {
   return (

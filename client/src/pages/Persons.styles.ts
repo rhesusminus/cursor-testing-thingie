@@ -1,29 +1,32 @@
 import { css } from '../../styled-system/css'
 
 export const personsStyles = css({
-  maxWidth: '800px',
-  margin: '0 auto',
   padding: '2rem',
+  maxWidth: '1200px',
+  margin: '0 auto',
 })
 
-export const headingStyles = css({
-  fontSize: '2.5rem',
-  fontWeight: 'bold',
-  marginBottom: '2rem',
-  color: 'slate.900',
+export const personList = css({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+  gap: '2rem',
+  listStyle: 'none',
+  padding: 0,
 })
 
-export const sectionStyles = css({
-  marginBottom: '2rem',
+export const personItem = css({
+  padding: '1.5rem',
+  border: '1px solid',
+  borderColor: 'gray.200',
+  borderRadius: '0.5rem',
+  backgroundColor: 'white',
+  boxShadow: 'sm',
   '& h2': {
-    fontSize: '1.8rem',
-    fontWeight: 'bold',
     marginBottom: '1rem',
-    color: 'slate.800',
+    color: 'slate.900',
   },
   '& p': {
-    color: 'slate.700',
-    lineHeight: '1.7',
-    marginBottom: '1rem',
+    marginBottom: '0.5rem',
+    color: 'slate.600',
   },
 })
