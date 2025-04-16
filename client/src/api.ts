@@ -37,15 +37,21 @@ export interface Planet {
 }
 
 const getPeople = async (id: number): Promise<Person> => {
-    const response = await fetch(`${apiUrl}/people/${id}`)
+  const response = await fetch(`${apiUrl}/people/${id}`)
 
-    return response.json()
+  return response.json()
+}
+
+const getAllPeople = async (): Promise<Person[]> => {
+  const response = await fetch(`${apiUrl}/people`)
+  const data = await response.json()
+  return data.results
 }
 
 const getPlanet = async (id: number): Promise<Planet> => {
-    const response = await fetch(`${apiUrl}/planets/${id}`)
+  const response = await fetch(`${apiUrl}/planets/${id}`)
 
-    return response.json()
+  return response.json()
 }
 
-export { getPeople, getPlanet }
+export { getPeople, getPlanet, getAllPeople }
