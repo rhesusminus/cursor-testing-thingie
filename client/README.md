@@ -8,6 +8,8 @@ This project is a modern React application bootstrapped with Vite and configured
 - **React** (v19.0.0) - A JavaScript library for building user interfaces
 - **TypeScript** (v5.7.2) - Adds static typing to JavaScript for better development experience
 - **Vite** (v6.2.0) - Next generation frontend tooling, offering extremely fast development server and build process
+- **React Router** (v7.5.0) - Declarative routing for React applications
+- **React Query** (v5.72.1) - Powerful data synchronization for React
 
 ### Development Dependencies
 - **@vitejs/plugin-react** (v4.3.4) - Official React plugin for Vite
@@ -50,11 +52,48 @@ This project is a modern React application bootstrapped with Vite and configured
 
 ```
 client/
-├── src/           # Source files
-├── public/        # Static assets
-├── dist/          # Build output (generated)
-└── node_modules/  # Dependencies
+├── src/
+│   ├── components/        # Reusable UI components
+│   │   ├── Layout.tsx     # Main layout component
+│   │   ├── Navbar.tsx     # Navigation component
+│   │   ├── Footer.tsx     # Footer component
+│   │   └── *.styles.ts    # Component-specific styles
+│   ├── pages/            # Page components
+│   │   ├── Home.tsx
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   └── Persons.tsx
+│   ├── api.ts            # API-related code
+│   ├── App.tsx           # Root component
+│   └── main.tsx          # Application entry point
+├── public/               # Static assets
+├── dist/                 # Build output (generated)
+└── node_modules/         # Dependencies
 ```
+
+## Styling with PandaCSS
+
+The project uses PandaCSS for styling with the following approach:
+
+1. **Component-Specific Styles**
+   - Each component has its own `.styles.ts` file
+   - Styles are organized by component for better maintainability
+   - Example: `Navbar.styles.ts`, `Layout.styles.ts`, etc.
+
+2. **Layout Structure**
+   - Main layout with header, main content, and footer
+   - Responsive design with proper spacing and alignment
+   - Consistent styling across components
+
+3. **Navigation**
+   - Sticky navigation bar with active state indicators
+   - Responsive menu structure
+   - Clear visual feedback for current page
+
+4. **Pages**
+   - Consistent page layouts
+   - Responsive content containers
+   - Form styling with proper validation states
 
 ## TypeScript Configuration
 
@@ -77,6 +116,8 @@ The project includes three TypeScript configuration files:
 1. Follow the existing code style
 2. Run `npm run lint` and `npm run format` before committing
 3. Make sure all TypeScript types are properly defined
+4. Keep styles in separate `.styles.ts` files
+5. Follow the component structure pattern
 
 ## License
 
