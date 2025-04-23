@@ -1,4 +1,4 @@
-import type { Person } from './api'
+import type { Person } from './types'
 
 export const mockPeople: Person[] = [
   {
