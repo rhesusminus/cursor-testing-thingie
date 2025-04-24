@@ -1,42 +1,19 @@
 import type { Person, Planet } from './types'
 
-const apiUrl = 'https://swapi.dev/api'
-
-import { mockPeople } from './mocks'
-
-// Environment variable or configuration to control using mocks
-// SWAPI isnt't working correctly, so we are using mocks
-const useMocks = true
-
-const getPeople = async (id: number): Promise<Person> => {
-  if (useMocks) {
-    const person = mockPeople.find((p) => p.url === `${apiUrl}/people/${id}/`)
-    if (!person) {
-      throw new Error('Person not found')
-    }
-
-    return person
-  }
-  const response = await fetch(`${apiUrl}/people/${id}`)
-
+const getPersonById = async (id: number): Promise<Person> => {
+  const response = await fetch(`/api/api/people/${id}.json`)
   return response.json()
 }
 
-const getAllPeople = async (): Promise<Person[]> => {
-  if (useMocks) {
-    return mockPeople
-  }
-
-  const response = await fetch(`${apiUrl}/people`)
+const getPeople = async (): Promise<Person[]> => {
+  const response = await fetch('/api/api/people/all.json')
   const data = await response.json()
-
-  return data.results
+  return data
 }
 
-const getPlanet = async (id: number): Promise<Planet> => {
-  const response = await fetch(`${apiUrl}/planets/${id}`)
-
+const getPlanetById = async (id: number): Promise<Planet> => {
+  const response = await fetch(`/api/api/planets/${id}.json`)
   return response.json()
 }
 
-export { getPeople, getPlanet, getAllPeople }
+export { getPersonById, getPlanetById, getPeople }

@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getAllPeople } from '../api'
+import { getPeople } from '../api'
 import { personsStyles, personList, personItem } from './Persons.styles'
 
 export function Persons() {
@@ -9,7 +9,7 @@ export function Persons() {
     error,
   } = useQuery({
     queryKey: ['people'],
-    queryFn: getAllPeople,
+    queryFn: getPeople,
   })
 
   if (isLoading) {
