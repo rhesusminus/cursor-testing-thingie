@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { getPeople } from '../api'
 import { personsStyles, personList, personItem } from './Persons.styles'
+import { headingStyles } from './About.styles'
 
 export function Persons() {
   const {
@@ -22,7 +23,7 @@ export function Persons() {
 
   return (
     <div className={personsStyles}>
-      <h1>Star Wars Characters</h1>
+      <h1 className={headingStyles}>Star Wars Characters</h1>
       <ul className={personList}>
         {people?.map((person) => (
           <li key={person.url} className={personItem}>
