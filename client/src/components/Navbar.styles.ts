@@ -18,6 +18,32 @@ export const navLinks = css({
   listStyle: 'none',
   margin: 0,
   padding: 0,
+  '@media (max-width: 768px)': {
+    display: 'none',
+    '&[data-is-open="true"]': {
+      display: 'flex',
+      position: 'absolute',
+      flexDirection: 'column',
+      top: '100%',
+      left: 0,
+      right: 0,
+      backgroundColor: 'slate.900',
+      padding: '1rem',
+    },
+  },
+})
+
+export const hamburgerButton = css({
+  display: 'none',
+  background: 'none',
+  border: 'none',
+  color: 'white',
+  cursor: 'pointer',
+  padding: '0.5rem',
+  fontSize: '1.75rem',
+  '@media (max-width: 768px)': {
+    display: 'block',
+  },
 })
 
 export const navLink = css({

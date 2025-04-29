@@ -1,11 +1,29 @@
 import { NavLink } from 'react-router-dom'
-import { navbarStyles, navLinks, navLink, activeNavLink, brandText } from './Navbar.styles'
+import { useState } from 'react'
+import {
+  navbarStyles,
+  navLinks,
+  navLink,
+  activeNavLink,
+  brandText,
+  hamburgerButton,
+} from './Navbar.styles'
 
 export function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <nav className={navbarStyles}>
       <div className={brandText}>My App</div>
-      <ul className={navLinks}>
+      <button
+        type="button"
+        className={hamburgerButton}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
+      <ul className={navLinks} data-is-open={isMenuOpen}>
         <li>
           <NavLink to="/" className={({ isActive }) => (isActive ? activeNavLink : navLink)}>
             Home
