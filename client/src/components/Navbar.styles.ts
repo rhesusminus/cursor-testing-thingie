@@ -4,12 +4,17 @@ export const navbarStyles = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '1rem 2rem',
+  padding: '0 2rem',
+  height: '64px',
   backgroundColor: 'slate.900',
   color: 'white',
-  position: 'sticky',
+  position: 'fixed',
   top: 0,
+  left: 0,
+  right: 0,
   zIndex: 10,
+  maxWidth: '100vw',
+  boxSizing: 'border-box',
 })
 
 export const navLinks = css({
@@ -22,13 +27,16 @@ export const navLinks = css({
     display: 'none',
     '&[data-is-open="true"]': {
       display: 'flex',
-      position: 'absolute',
+      position: 'fixed',
       flexDirection: 'column',
-      top: '100%',
+      top: '64px', // adjust this value based on your navbar height
       left: 0,
-      right: 0,
+      width: '100%',
       backgroundColor: 'slate.900',
       padding: '1rem',
+      alignItems: 'center',
+      boxSizing: 'border-box',
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
     },
   },
 })
@@ -39,10 +47,14 @@ export const hamburgerButton = css({
   border: 'none',
   color: 'white',
   cursor: 'pointer',
-  padding: '0.5rem',
+  height: '40px',
+  width: '40px',
+  padding: 0,
   fontSize: '1.75rem',
+  alignItems: 'center',
+  justifyContent: 'center',
   '@media (max-width: 768px)': {
-    display: 'block',
+    display: 'flex',
   },
 })
 

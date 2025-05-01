@@ -5,12 +5,13 @@ export const layoutContainer = css({
   minHeight: '100vh',
   display: 'flex',
   flexDirection: 'column',
+  width: '100%',
+  overflowX: 'hidden',
 })
 
 export const headerStyles = css({
-  width: 'full',
-  borderBottom: '1px solid',
-  borderColor: 'gray.200',
+  width: '100%',
+  height: '64px', // Match this with the top value in navLinks mobile menu
 })
 
 export const mainStyles = flex({
@@ -21,4 +22,7 @@ export const mainStyles = flex({
   mx: 'auto',
   direction: 'column',
   gap: '4',
+  marginTop: '64px', // Add top margin to account for fixed navbar
+  width: '100%',
+  boxSizing: 'border-box',
 })
