@@ -1,19 +1,23 @@
-import type { Person, Planet } from './types'
+import type { Planet, Person } from './types'
 
-const getPersonById = async (id: number): Promise<Person> => {
-  const response = await fetch(`/api/api/people/${id}.json`)
-  return response.json()
-}
-
-const getPeople = async (): Promise<Person[]> => {
-  const response = await fetch('/api/api/people/all.json')
+export async function getPlanets(): Promise<Planet[]> {
+  const response = await fetch('https://swapi.dev/api/planets/')
   const data = await response.json()
-  return data
+  return data.results
 }
 
-const getPlanetById = async (id: number): Promise<Planet> => {
-  const response = await fetch(`/api/api/planets/${id}.json`)
+export async function getPlanetById(id: number): Promise<Planet> {
+  const response = await fetch(`https://swapi.dev/api/planets/${id}/`)
   return response.json()
 }
 
-export { getPersonById, getPlanetById, getPeople }
+export async function getPersonById(id: number): Promise<Person> {
+  const response = await fetch(`https://swapi.dev/api/people/${id}/`)
+  return response.json()
+}
+
+export async function getPeople(): Promise<Person[]> {
+  const response = await fetch('https://swapi.dev/api/people/')
+  const data = await response.json()
+  return data.results
+}

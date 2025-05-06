@@ -40,6 +40,11 @@ export function Navbar() {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/planets" className={({ isActive }) => (isActive ? activeNavLink : navLink)}>
+            Planets
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/contact" className={({ isActive }) => (isActive ? activeNavLink : navLink)}>
             Contact
           </NavLink>
