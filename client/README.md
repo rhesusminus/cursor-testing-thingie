@@ -1,15 +1,20 @@
-# React + TypeScript + Vite Project
+# Star Wars Explorer - React + TypeScript + Vite Project
 
-This project is a modern React application bootstrapped with Vite and configured with TypeScript for enhanced development experience.
+This project is a modern React application bootstrapped with Vite and configured with TypeScript for enhanced development experience. It provides an interface to explore Star Wars characters and planets data.
 
 ## Tech Stack
 
 ### Core Technologies
 - **React** (v19.0.0) - A JavaScript library for building user interfaces
 - **TypeScript** (v5.7.2) - Adds static typing to JavaScript for better development experience
-- **Vite** (v6.2.0) - Next generation frontend tooling, offering extremely fast development server and build process
+- **Vite** (v6.3.2) - Next generation frontend tooling, offering extremely fast development server and build process
 - **React Router** (v7.5.0) - Declarative routing for React applications
-- **React Query** (v5.72.1) - Powerful data synchronization for React
+- **TanStack React Query** (v5.72.1) - Powerful data synchronization for React
+
+### Testing Tools
+- **Vitest** (v3.1.3) - Fast Vite-native testing framework
+- **Testing Library** (v16.3.0) - Utilities for testing React components
+- **JSDOM** (v26.1.0) - A JavaScript implementation of the DOM for testing
 
 ### Development Dependencies
 - **@vitejs/plugin-react** (v4.3.4) - Official React plugin for Vite
@@ -34,7 +39,12 @@ This project is a modern React application bootstrapped with Vite and configured
    ```
    This will start both the development server at `http://localhost:5173` and the PandaCSS codegen in watch mode
 
-3. Build for production:
+3. Run tests:
+   ```bash
+   npm test
+   ```
+
+4. Build for production:
    ```bash
    npm run build
    ```
@@ -47,6 +57,9 @@ This project is a modern React application bootstrapped with Vite and configured
 - `npm run format` - Format code using Biome
 - `npm run preview` - Preview production build locally
 - `npm run prepare` - Generate PandaCSS styles
+- `npm test` - Run tests once
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage reports
 
 ## Project Structure
 
@@ -62,13 +75,20 @@ client/
 │   │   ├── Home.tsx
 │   │   ├── About.tsx
 │   │   ├── Contact.tsx
-│   │   └── Persons.tsx
-│   ├── api.ts            # API-related code
+│   │   ├── Persons.tsx   # Star Wars characters page
+│   │   ├── Persons.test.tsx # Tests for Persons page
+│   │   └── Planets.tsx   # Star Wars planets page
+│   ├── api.ts            # API-related code for fetching data
+│   ├── mocks.ts          # Mock data for testing
+│   ├── types.ts          # TypeScript type definitions
+│   ├── test-setup.ts     # Test setup for component testing
 │   ├── App.tsx           # Root component
 │   └── main.tsx          # Application entry point
 ├── public/               # Static assets
-├── dist/                 # Build output (generated)
-└── node_modules/         # Dependencies
+├── vitest.config.ts      # Vitest configuration
+├── setupTests.ts         # Global test setup
+├── testing-docs.md       # Documentation for testing practices
+└── styled-system/        # PandaCSS generated styles
 ```
 
 ## Styling with PandaCSS
@@ -111,6 +131,49 @@ The project includes three TypeScript configuration files:
   - Modern JavaScript/TypeScript best practices
 - PandaCSS provides type-safe CSS-in-JS solutions
 
+## Testing Framework
+
+The project uses Vitest with React Testing Library for testing:
+
+- **Unit Tests**: Testing individual components and utilities
+- **Component Tests**: Testing React components including rendering, state, and events
+- **Integration Tests**: Testing interactions between components and with data
+
+### Test Structure
+
+```tsx
+describe('Component Name', () => {
+  // Tests grouped by functionality or state
+  describe('when in a specific state', () => {
+    it('behaves as expected', () => {
+      // Arrange, Act, Assert...
+    });
+  });
+});
+```
+
+### Running Tests
+
+- `npm test` - Runs all tests once
+- `npm run test:watch` - Runs tests in watch mode for development
+- `npm run test:coverage` - Generates test coverage reports
+
+## Features
+
+### Star Wars Data Explorer
+
+The application provides interfaces to explore Star Wars data:
+
+1. **Characters Page** (`Persons.tsx`)
+   - Displays a list of Star Wars characters
+   - Uses React Query for data fetching and caching
+   - Responsive layout with styled components
+
+2. **Planets Page** (`Planets.tsx`)
+   - Displays information about Star Wars planets
+   - Shows climate, terrain, and population data
+   - Consistent styling with other pages
+
 ## Contributing
 
 1. Follow the existing code style
@@ -118,10 +181,12 @@ The project includes three TypeScript configuration files:
 3. Make sure all TypeScript types are properly defined
 4. Keep styles in separate `.styles.ts` files
 5. Follow the component structure pattern
+6. Write tests for all new features and components
+7. Refer to `testing-docs.md` for detailed testing guidelines
 
 ## License
 
 This project is private and not licensed for public use.
 
 ---
-*Documentation written by Claude, an AI assistant, in collaboration with the project maintainers.*
+*Last updated: May 15, 2025*
