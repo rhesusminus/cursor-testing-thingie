@@ -6,7 +6,7 @@ import type { Planet } from '../types'
 
 export function Planets() {
   const {
-    data: planets,
+    data: planets = [],
     isLoading,
     error,
   } = useQuery({
@@ -26,7 +26,7 @@ export function Planets() {
     <div className={planetsStyles}>
       <h1 className={headingStyles}>Star Wars Planets</h1>
       <ul className={planetList}>
-        {planets?.map((planet: Planet) => (
+        {planets.map((planet: Planet) => (
           <li key={planet.url} className={planetItem}>
             <h2>{planet.name}</h2>
             <p>Climate: {planet.climate}</p>
