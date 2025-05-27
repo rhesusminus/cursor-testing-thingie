@@ -11,7 +11,7 @@ vi.mock('../api', () => ({
   getPeople: vi.fn(),
 }))
 
-describe('Persons Component', () => {
+export default describe('Persons Component', () => {
   let queryClient: QueryClient
 
   beforeEach(() => {
