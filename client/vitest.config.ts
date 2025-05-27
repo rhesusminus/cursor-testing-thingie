@@ -10,7 +10,11 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./setupTests.ts', './src/test-setup.ts'],
     deps: {
-      inline: ['@testing-library/jest-dom'],
+      optimizer: {
+        web: {
+          include: ['@testing-library/jest-dom'],
+        },
+      },
     },
   },
   resolve: {
