@@ -1,6 +1,16 @@
 # Star Wars Explorer - React + TypeScript + Vite Project
 
-This project is a modern React application bootstrapped with Vite and configured with TypeScript for enhanced development experience. It provides an interface to explore Star Wars characters and planets data.
+A modern, fully-typed React application that provides an interactive interface for exploring Star Wars universe data. Built with cutting-edge web technologies for optimal performance and developer experience.
+
+## ✨ Features
+
+- 🚀 **Fast Development**: Powered by Vite for lightning-fast hot module replacement
+- 🔍 **Star Wars Data Explorer**: Browse characters and planets from the Star Wars universe
+- 🎨 **Modern Styling**: Type-safe CSS-in-JS with PandaCSS
+- 🧪 **Comprehensive Testing**: Unit and integration tests with Vitest
+- 📱 **Responsive Design**: Mobile-first, accessible UI components
+- 🔧 **Developer Experience**: TypeScript, linting, formatting, and more
+- ⚡ **Performance**: Optimized builds and efficient data fetching with React Query
 
 ## Tech Stack
 
@@ -28,23 +38,35 @@ This project is a modern React application bootstrapped with Vite and configured
 
 ## Getting Started
 
-1. Install dependencies:
+### Prerequisites
+- **Node.js** (v18 or higher)
+- **npm** (v9 or higher)
+
+### Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/rhesusminus/cursor-testing-thingie.git
+   cd cursor-testing-thingie/client
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
    This will start both the development server at `http://localhost:5173` and the PandaCSS codegen in watch mode
 
-3. Run tests:
+4. Run tests:
    ```bash
    npm test
    ```
 
-4. Build for production:
+5. Build for production:
    ```bash
    npm run build
    ```
@@ -174,19 +196,91 @@ The application provides interfaces to explore Star Wars data:
    - Shows climate, terrain, and population data
    - Consistent styling with other pages
 
+## Development Workflow
+
+### Daily Development
+1. **Start development environment**:
+   ```bash
+   npm run dev
+   ```
+   This starts both Vite dev server and PandaCSS watch mode
+
+2. **Run tests during development**:
+   ```bash
+   npm run test:watch
+   ```
+
+3. **Format and lint your code**:
+   ```bash
+   npm run format
+   npm run lint
+   ```
+
+### Before Committing
+1. **Run all tests**:
+   ```bash
+   npm test
+   ```
+
+2. **Check test coverage**:
+   ```bash
+   npm run test:coverage
+   ```
+
+3. **Ensure build works**:
+   ```bash
+   npm run build
+   ```
+
 ## Contributing
 
-1. Follow the existing code style
-2. Run `npm run lint` and `npm run format` before committing
-3. Make sure all TypeScript types are properly defined
-4. Keep styles in separate `.styles.ts` files
-5. Follow the component structure pattern
-6. Write tests for all new features and components
-7. Refer to `testing-docs.md` for detailed testing guidelines
+1. **Code Style**: Follow the existing patterns and use the provided tools
+   - Run `npm run format` for consistent formatting
+   - Run `npm run lint` to catch potential issues
+   
+2. **TypeScript**: Maintain type safety
+   - All new code should be properly typed
+   - Avoid using `any` - use proper type definitions
+   
+3. **Testing**: Write tests for new features
+   - Follow the existing test patterns in `*.test.tsx` files
+   - Aim for good test coverage
+   - Refer to `testing-docs.md` for detailed testing guidelines
+   
+4. **Styling**: Use the PandaCSS system
+   - Create component-specific `.styles.ts` files
+   - Follow the existing component structure pattern
+   
+5. **Components**: Follow React best practices
+   - Keep components focused and reusable
+   - Use proper prop typing
+   - Include accessibility features
+
+## 💡 Development Tips
+
+- **Hot Reload**: Changes to React components and styles are reflected instantly
+- **Type Safety**: TypeScript will catch errors at compile time - pay attention to the type checker
+- **PandaCSS**: Use the generated styles from `styled-system/` for consistent design
+- **Testing**: Tests run automatically in watch mode during development
+- **Debugging**: Use browser dev tools and React Developer Tools for debugging
+
+## 🚀 Deployment
+
+The project is configured for easy deployment:
+
+```bash
+# Build for production
+npm run build
+
+# Preview the production build locally
+npm run preview
+```
+
+The built files will be in the `dist/` directory and can be deployed to any static hosting service.
 
 ## License
 
-This project is private and not licensed for public use.
+This project is part of a testing repository and is intended for educational/experimental purposes.
 
 ---
-*Last updated: May 15, 2025*
+*Last updated: July 13, 2025*
